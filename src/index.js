@@ -1,11 +1,13 @@
-console.log('initial');
+const express = require('express');
+const config = require('./config');
 
-// const env = process.env.NODE_ENV || 'development';
+const app = require('express')();
 
-// const config = require('./config/config')[env];
-// const app = require('express')();
+app.get('/', (req, res) => {
+    res.send('Home Page');
+});
 
-// require('./config/express')(app);
-// require('./config/routes')(app);
+app.listen(config.PORT, () => console.log(`Server is running on port ${config.PORT}...`));
 
-// app.listen(config.port, console.log(`Listening on port ${config.port}! Now its up to you...`));
+
+
