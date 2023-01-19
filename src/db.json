@@ -34,6 +34,13 @@
       "description": "some hard cube",
       "imageUrl": "https://cdn-cfkdl.nitrocdn.com/RsYdeCXUyMGNzjUpUbtAUDPJnJbVbKpI/assets/static/optimized/rev-58cfe36/wp-content/uploads/2018/06/Pot-Shaped-Cube-Puzzle1.jpg",
       "difficultyLevel": "6"
+    },
+    {
+      "name": "Cute Cube",
+      "description": "Really cute cube",
+      "imageUrl": "https://www.tubefilter.com/wp-content/uploads/2022/09/youtube-millionaires-souptimmy-1920x1131.jpg",
+      "difficultyLevel": "2",
+      "id": 6
     }
   ]
 }
