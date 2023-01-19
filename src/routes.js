@@ -7,6 +7,7 @@ router.get('/', homeController.getHomePage);
 router.get('/about', homeController.getAboutPage);
 
 router.get('/create', cubeController.getCreateCube);
+router.post('/create', cubeController.postCreateCube)
 
 
 module.exports = router;
