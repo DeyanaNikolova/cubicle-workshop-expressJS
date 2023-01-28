@@ -14,7 +14,7 @@ app.use(routes);
 
 initDatabase()
 .then(() => app.listen(config.PORT, () => console.log(`Server is running on port ${config.PORT}...`)))
-.catch((err)=> console.console.error(err));
+.catch((err)=> console.console.error(err.message));
 
 
 
