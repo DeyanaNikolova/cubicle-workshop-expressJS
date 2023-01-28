@@ -12,9 +12,10 @@ router.post('/create', async (req, res) => {
 
   const accessoryDb =  await Accessory.create({ name, description, imageUrl });
 
-  console.log(accessoryDb._id);
+ // console.log(accessoryDb._id);
 
   res.redirect('/');
 });
+
 
 module.exports = router;
