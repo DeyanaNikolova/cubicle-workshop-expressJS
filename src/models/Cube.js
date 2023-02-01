@@ -1,13 +1,13 @@
-const { Schema, model } = require('mongoose');
+const  mongoose = require('mongoose');
 
-const cubeSchema = new Schema({
+const cubeSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true, 
+        required: true,
     },
     description: {
         type: String,
-        required: true, 
+        required: true,
         maxLength: 50, // check real length
     },
     imageUrl: {
@@ -17,13 +17,17 @@ const cubeSchema = new Schema({
     },
     difficultyLevel: {
         type: Number,
-        required: true, 
+        required: true,
         min: 1,
-        max: 6 
-    }
+        max: 6
+    },
+    accessories: [{
+            type: mongoose.Types.ObjectId,
+            ref: 'Accessory'
+        }]
 });
 
 
-const Cube = model('Cube', cubeSchema);
+const Cube = mongoose.model('Cube', cubeSchema);
 
 module.exports = Cube;
