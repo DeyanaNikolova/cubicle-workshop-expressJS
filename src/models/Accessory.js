@@ -12,7 +12,8 @@ const accessorySchema = new Schema({
     },
     imageUrl: {
         type: String,
-        required: true
+        required: true,
+        match: [ /^https?:\/\//, 'Invalid URL' ]
     }
 });
 
