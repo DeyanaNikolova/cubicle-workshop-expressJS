@@ -9,12 +9,14 @@ router.get('/', homeController.getHomePage);
 router.get('/about', homeController.getAboutPage);
 router.get('/404', homeController.getErrorPage);
 
-router.get('/create', cubeController.getCreateCube);
-router.post('/create', cubeController.postCreateCube);
-router.get('/cubes/details/:cubeId', cubeController.getDetails);
+router.get('/cubes/create', cubeController.getCreateCube);
+router.post('/cubes/create', cubeController.postCreateCube);
 
+router.get('/cubes/details/:cubeId', cubeController.getDetails);
 router.get('/cubes/attach/:cubeId', cubeController.getAttacheAccessory);
 router.post('/cubes/attach/:cubeId', cubeController.postAttachAccessory);
+
+ 
 router.use('/accessory', accessoryController);
 
 
