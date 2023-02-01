@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { restart } = require('nodemon');
+
 const Accessory = require('../models/Accessory');
 
 // URL : '/accessory/create'
