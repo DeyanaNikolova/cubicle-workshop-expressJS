@@ -10,8 +10,8 @@ router.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
     try{
-   const user =  await authServece.login(username, password);
-   console.log(user);
+   const token =  await authServece.login(username, password);
+        console.log(token);
     } catch(err){
         console.log(err);
         return res.redirect('/')
