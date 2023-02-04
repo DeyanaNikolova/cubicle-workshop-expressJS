@@ -9,12 +9,12 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
-    try{
-   const token =  await authServece.login(username, password);
-        console.log(token);
-    } catch(err){
+    try {
+        const token = await authServece.login(username, password);
+        res.cookie('auth', token, { httpOnly: true });
+
+    } catch (err) {
         console.log(err);
-        return res.redirect('/')
     }
     res.redirect('/');
 });
@@ -26,12 +26,12 @@ router.get('/register', (req, res) => {
 router.post('/register', async (req, res) => {
     const { username, password, repeatPassword } = req.body;
 
-    if(password !== repeatPassword){
+    if (password !== repeatPassword) {
         return res.redirect('/404');
     }
-    const existingUser = await  authServece.getUserByName(username);
+    const existingUser = await authServece.getUserByName(username);
 
-    if(existingUser){
+    if (existingUser) {
         return res.redirect('/404');
     }
 
