@@ -7,3 +7,20 @@ const jwt = {
  };
 
  module.exports = jwt;
+
+
+
+ 
+// promise function with callback === util.promisify()
+
+//  function promiseSin(payload, secret, options) {
+//     const promise = new Promise(function(resolve, reject){
+//         jwtCallback.sign(payload, secret, options, (err, token) =>{
+//             if(err){
+//                 return reject(err);
+//             }
+//             resolve(token);
+//         });
+//     });
+//     return promise;
+//  }
