@@ -18,11 +18,11 @@ router.get('/cubes/create', isAuthenticated, cubeController.getCreateCube);
 router.post('/cubes/create', isAuthenticated, cubeController.postCreateCube);
 router.get('/cubes/details/:cubeId', cubeController.getDetails);
 
-router.get('/cubes/edit/:cubeId', cubeController.getEditCube);
-router.post('/cubes/edit/:cubeId', cubeController.postEditCube);
+router.get('/cubes/edit/:cubeId', isAuthenticated, cubeController.getEditCube);
+router.post('/cubes/edit/:cubeId', isAuthenticated, cubeController.postEditCube);
 
-router.get('/cubes/delete/:cubeId', cubeController.getDeleteCube);
-router.post('/cubes/delete/:cubeId', cubeController.postDeleteCube);
+router.get('/cubes/delete/:cubeId', isAuthenticated, cubeController.getDeleteCube);
+router.post('/cubes/delete/:cubeId', isAuthenticated, cubeController.postDeleteCube);
 
 router.get('/cubes/attach/:cubeId', cubeController.getAttacheAccessory);
 router.post('/cubes/attach/:cubeId', cubeController.postAttachAccessory);

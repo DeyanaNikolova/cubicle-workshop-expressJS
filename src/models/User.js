@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: [6, 'Password should be minimum 6 characters!']
-    }
+    },
 });
 
 userSchema.pre('save', function (next) {
