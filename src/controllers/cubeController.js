@@ -85,6 +85,10 @@ exports.getDeleteCube = async (req, res) => {
   const cube = await cubeService.getOne(req.params.cubeId).lean();
   const difficultyLevels = cubeUtils.generateDifficultyLevels(cube.difficultyLevel);
 
+  if(!cubeUtils.isOwner(req.user, cube)){
+    return res.redirect('/404');
+  }
+
   res.render('cube/delete', { cube, difficultyLevels });
 };
 
