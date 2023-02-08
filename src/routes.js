@@ -21,7 +21,7 @@ router.get('/cubes/edit/:cubeId', cubeController.getEditCube);
 router.post('/cubes/edit/:cubeId', cubeController.postEditCube);
 
 router.get('/cubes/delete/:cubeId', cubeController.getDeleteCube);
-//router.post('/cubes/delete/:cubeId', cubeController.);
+router.post('/cubes/delete/:cubeId', cubeController.postDeleteCube);
 
 router.get('/cubes/attach/:cubeId', cubeController.getAttacheAccessory);
 router.post('/cubes/attach/:cubeId', cubeController.postAttachAccessory);
