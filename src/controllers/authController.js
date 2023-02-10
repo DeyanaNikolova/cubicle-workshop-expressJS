@@ -42,7 +42,7 @@ router.post('/register', async (req, res, next) => {
         console.log(user);
 
     } catch (err) {
-       const errors = parseMongooseError(err);
+       const errors = parseMongooseError(err); 
         return res.render('auth/register', { error: errors[0] });
         //return next(err);
     }
