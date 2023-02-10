@@ -5,6 +5,7 @@ const homeController = require('./controllers/homeController');
 const accessoryController = require('./controllers/accessoryController');
 const authController = require('./controllers/authController');
 const { isAuthenticated } = require('./middlewares/authMiddleware');
+const { handleRequest } = require('./utils/requestUtils');
 
 
 router.get('/', homeController.getHomePage);
@@ -14,18 +15,18 @@ router.get('/404', homeController.getErrorPage);
 router.use('/', authController);
 router.use('/logout', authController);
 
-router.get('/cubes/create', isAuthenticated, cubeController.getCreateCube);
-router.post('/cubes/create', isAuthenticated, cubeController.postCreateCube);
-router.get('/cubes/details/:cubeId', cubeController.getDetails);
+router.get('/cubes/create', isAuthenticated, handleRequest(cubeController.getCreateCube));
+router.post('/cubes/create', isAuthenticated, handleRequest(cubeController.postCreateCube));
+router.get('/cubes/details/:cubeId', handleRequest(cubeController.getDetails));
 
-router.get('/cubes/edit/:cubeId', isAuthenticated, cubeController.getEditCube);
-router.post('/cubes/edit/:cubeId', isAuthenticated, cubeController.postEditCube);
+router.get('/cubes/edit/:cubeId', isAuthenticated, handleRequest(cubeController.getEditCube));
+router.post('/cubes/edit/:cubeId', handleRequest(cubeController.postEditCube));
 
-router.get('/cubes/delete/:cubeId', isAuthenticated, cubeController.getDeleteCube);
-router.post('/cubes/delete/:cubeId', isAuthenticated, cubeController.postDeleteCube);
+router.get('/cubes/delete/:cubeId', isAuthenticated, handleRequest(cubeController.getDeleteCube));
+router.post('/cubes/delete/:cubeId', isAuthenticated, handleRequest(cubeController.postDeleteCube));
 
-router.get('/cubes/attach/:cubeId', cubeController.getAttacheAccessory);
-router.post('/cubes/attach/:cubeId', cubeController.postAttachAccessory);
+router.get('/cubes/attach/:cubeId', handleRequest(cubeController.getAttacheAccessory));
+router.post('/cubes/attach/:cubeId', handleRequest(cubeController.postAttachAccessory));
 
  
 router.use('/accessory', accessoryController);
